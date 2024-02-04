@@ -1,0 +1,54 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background: radial-gradient(circle, #3498db, #2c3e50);
+    color: #fff;
+}
+
+h1 {
+    text-align: center;
+    font-size: 45px;
+}
+
+#result {
+    font-size: 18px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #2ecc71;
+    color: #fff;
+    border-radius: 10px;
+    border-color: white;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #27ae60;
+}
+
+#dice-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#dice-logo {
+    width: 100px; /* Adjust the size as needed */
+    height: auto;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+}

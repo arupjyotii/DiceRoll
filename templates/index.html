@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div>
+        <h1>Dice Roller</h1>
+        <p id="result">
+            {% if dice_result %}
+                The dice rolled: {{ dice_result }}. {% if result_text %}{{ result_text }}{% endif %}
+            {% endif %}
+        </p>
+        <button id="rollButton" onclick="rollDice()">Roll Dice</button>
+        <button id="refreshButton" onclick="refreshPage()">Refresh</button>
+    </div>
+
+    <div id="dice-container">
+        <img id="dice-logo" src="static/dice.gif" alt="Dice Logo">
+    </div>
+
+    <footer>
+        Roll the Dice and have your questions.
+    </footer>
+
+    <script>
+    function rollDice() {
+        document.getElementById('rollButton').disabled = true;
+
+        setTimeout(function() {
+            fetch('/roll_dice')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('result').innerHTML = `The dice rolled: ${data.dice_result}. ${data.result_text}`;
+                });
+        }, 1000);
+    }
+
+        function refreshPage() {
+            location.reload();
+        }
+    </script>
+</body>
+</html>
