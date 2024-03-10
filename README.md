@@ -1,6 +1,5 @@
 **Dice Roller** 
 
-Developer: Arup Jyoti
 
 This Flask application simulates rolling a dice and displays the outcome along with a dice logo. It also includes a "Refresh" button to reset the dice rolling functionality.
 
